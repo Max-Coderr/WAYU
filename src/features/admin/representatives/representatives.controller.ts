@@ -1,9 +1,11 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { CreateRepresentativeCommand, DeleteRepresentativeCommand, UpdateRepresentativeCommand } from '@/features/admin/representatives/representatives.commands';
-import { GetAllRepresentativesFilters, GetAllRepresentativesQuery } from '@/features/admin/representatives/representatives.queries';
-import { RepresentativeResponse } from '@/features/admin/representatives/representatives.responses';
+import { CreateRepresentativeCommand } from './commands/create-representative/create-representative.command';
+import { UpdateRepresentativeCommand } from './commands/update-representative/update-representative.command';
+import { DeleteRepresentativeCommand } from './commands/delete-representative/delete-representative.command';
+import { GetAllRepresentativesFilters, GetAllRepresentativesQuery } from './queries/get-all-representatives/get-all-representatives.query';
+import { RepresentativeResponse } from './commands/create-representative/representative.response';
 
 @Controller('admin/representatives')
 export class RepresentativesController {

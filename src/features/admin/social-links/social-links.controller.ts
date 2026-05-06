@@ -1,9 +1,11 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { CreateSocialLinkCommand, DeleteSocialLinkCommand, UpdateSocialLinkCommand } from '@/features/admin/social-links/social-links.commands';
-import { GetAllSocialLinksFilters, GetAllSocialLinksQuery } from '@/features/admin/social-links/social-links.queries';
-import { SocialLinkResponse } from '@/features/admin/social-links/social-links.responses';
+import { CreateSocialLinkCommand } from './commands/create-social-link/create-social-link.command';
+import { UpdateSocialLinkCommand } from './commands/update-social-link/update-social-link.command';
+import { DeleteSocialLinkCommand } from './commands/delete-social-link/delete-social-link.command';
+import { GetAllSocialLinksFilters, GetAllSocialLinksQuery } from './queries/get-all-social-links/get-all-social-links.query';
+import { SocialLinkResponse } from './commands/create-social-link/social-link.response';
 
 @Controller('admin/social-links')
 export class SocialLinksController {

@@ -1,9 +1,11 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { CreateUsefulLinkCommand, DeleteUsefulLinkCommand, UpdateUsefulLinkCommand } from '@/features/admin/useful-links/useful-links.commands';
-import { GetAllUsefulLinksFilters, GetAllUsefulLinksQuery } from '@/features/admin/useful-links/useful-links.queries';
-import { UsefulLinkResponse } from '@/features/admin/useful-links/useful-links.responses';
+import { CreateUsefulLinkCommand } from './commands/create-useful-link/create-useful-link.command';
+import { UpdateUsefulLinkCommand } from './commands/update-useful-link/update-useful-link.command';
+import { DeleteUsefulLinkCommand } from './commands/delete-useful-link/delete-useful-link.command';
+import { GetAllUsefulLinksFilters, GetAllUsefulLinksQuery } from './queries/get-all-useful-links/get-all-useful-links.query';
+import { UsefulLinkResponse } from './commands/create-useful-link/useful-link.response';
 
 @Controller('admin/useful-links')
 export class UsefulLinksController {

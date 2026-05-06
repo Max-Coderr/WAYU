@@ -1,10 +1,11 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { CreateCountryCommand } from './commands/create-country.command';
-import { DeleteCountryCommand } from './commands/delete-country.command';
-import { GetAllCountriesFilters, GetAllCountriesQuery, GetCountryByIdQuery } from './queries/get-countries.queries';
-import { CountryResponse } from './responses/country.response';
+import { CreateCountryCommand } from './commands/create-country/create-country.command';
+import { DeleteCountryCommand } from './commands/delete-country/delete-country.command';
+import { GetAllCountriesFilters, GetAllCountriesQuery } from './queries/get-all-countries/get-all-countries.query';
+import { GetCountryByIdQuery } from './queries/get-country-by-id/get-country-by-id.query';
+import { CountryResponse } from './commands/create-country/country.response';
 
 @Controller('admin/countries')
 export class CountriesController {
